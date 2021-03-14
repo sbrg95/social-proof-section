@@ -41,7 +41,8 @@ body {
   background-color: var(--neutral-white);
   text-align: center;
   line-height: 1.7;
-  margin: 0;
+  max-width: 30rem;
+  margin: 0 auto;
   padding: 5rem 2rem;
   display: grid;
   grid-template-areas:
@@ -77,9 +78,13 @@ header p {
 
 .ratings {
   grid-area: ratings;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .ratings .item {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   background-color: var(--neutral-light);
   border-radius: 10px;
@@ -87,6 +92,9 @@ header p {
 
 .ratings .stars {
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ratings .category {
@@ -132,4 +140,79 @@ header p {
 
 .testimonials .author .role {
   color: var(--primary-accent);
+}
+
+/* Desktop styling media queries */
+
+@media screen and (min-width: 1150px) {
+  body {
+    text-align: left;
+    grid-template-columns: minmax(25rem, 1fr) minmax(25rem, 1fr);
+    grid-template-areas:
+      'header ratings'
+      'testimonials testimonials';
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 7rem;
+    background: url('./images/bg-pattern-top-desktop.svg') top left no-repeat,
+      url('./images/bg-pattern-bottom-desktop.svg') bottom right no-repeat;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+    margin: auto 0;
+  }
+
+  header p {
+    padding-right: 4rem;
+  }
+
+  .ratings .item {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 27rem;
+  }
+
+  .ratings .item:nth-child(1) {
+    align-self: flex-start;
+  }
+
+  .ratings .item:nth-child(2) {
+    align-self: center;
+  }
+
+  .ratings .item:nth-child(3) {
+    align-self: flex-end;
+  }
+
+  .ratings .stars {
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    height: 17rem;
+    gap: 2rem;
+    font-size: 0.75rem;
+  }
+
+  .testimonials .item {
+    margin: 0;
+  }
+
+  .testimonials .item:nth-child(2) {
+    margin-top: 1rem;
+  }
+
+  .testimonials .item:nth-child(3) {
+    margin-top: 2rem;
+  }
+
+  .testimonials .author img {
+    width: 2.5rem;
+  }
 }
