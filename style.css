@@ -1,3 +1,20 @@
+/* Custom Properties */
+
+:root {
+  --primary-dark: hsl(300, 43%, 22%);
+  --primary-accent: hsl(333, 80%, 67%);
+  --neutral-dark: hsl(303, 10%, 53%);
+  --neutral-light: hsl(300, 24%, 96%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --fs-main: 15px;
+  --ff-main: 'Spartan', sans-serif;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
+/* Reset styles */
+
 *,
 *::before,
 *::after {
