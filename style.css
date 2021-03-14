@@ -32,3 +32,17 @@ p {
 .flow-content > * + * {
   margin-top: 1rem;
 }
+
+/* Base styling */
+
+body {
+  font-size: var(--fs-main);
+  font-family: var(--ff-main);
+  background-color: var(--neutral-light);
+  text-align: center;
+  line-height: 1.7;
+}
+
+h1 {
+  line-height: 1;
+}
